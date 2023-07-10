@@ -23,8 +23,8 @@ public class ItemController {
         return new ResponseEntity<List<Item>>(itemService.allItems(), HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<Optional<Item>> getSingleItem(@PathVariable ObjectId id){
-        return new ResponseEntity<Optional<Item>>(itemService.singleItem(id), HttpStatus.OK);
+    @GetMapping("/{itemId}")
+    public ResponseEntity<Optional<Item>> getSingleItem(@PathVariable String itemId) {
+        return new ResponseEntity<Optional<Item>>(itemService.singleItem(itemId), HttpStatus.OK);
     }
 }

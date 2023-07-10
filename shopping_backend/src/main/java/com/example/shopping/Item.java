@@ -16,8 +16,8 @@ import java.util.List;
 public class Item {
     @Id
     private ObjectId id;
-    private int itemId;
+    private String itemId;
     private String name;
-    private int quantity;
-    private float price;
+    private String quantity;
+    private String price;
 }
