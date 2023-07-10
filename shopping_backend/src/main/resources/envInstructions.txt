@@ -1,0 +1,7 @@
+So in this same directory (resources), you will create a new file called ".env". Copy paste this inside of it
+and add credentials.
+
+MONGO_DATABASE=
+MONGO_USER=
+MONGO_PASSWORD=
+MONGO_CLUSTER=
