@@ -23,4 +23,15 @@ public class Item {
     private String name;
     private String quantity;
     private String price;
+
+    public Item(String itemId, String name, String quantity, String price) {
+        this.itemId = itemId;
+        this.name = name;
+        this.quantity = quantity;
+        this.price = price;
+    }
+
+    public String getItemId() {
+        return itemId;
+    }
 }
