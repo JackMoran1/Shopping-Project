@@ -37,4 +37,9 @@ public class ItemController {
         return new ResponseEntity<Item>(itemService.modifyItem(itemId, payload.get("name"),
                 payload.get("quantity"), payload.get("price")), HttpStatus.OK);
     }
+    @DeleteMapping("/{itemId}")
+    public ResponseEntity<Void> deleteItem(@PathVariable String itemId){
+        itemService.deleteItem(itemId);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 }

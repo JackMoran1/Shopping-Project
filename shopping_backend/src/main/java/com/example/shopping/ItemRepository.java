@@ -10,4 +10,5 @@ import java.util.Optional;
 @Repository
 public interface ItemRepository extends MongoRepository<Item, ObjectId> {
     Optional<Item> findItemByitemId(String itemId);
+    Optional<Item> deleteItemByitemId(String itemId);
 }
