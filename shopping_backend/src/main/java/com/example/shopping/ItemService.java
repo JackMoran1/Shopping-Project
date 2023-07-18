@@ -1,6 +1,5 @@
 package com.example.shopping;
 
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -32,18 +31,16 @@ public class ItemService {
         Item item = itemRepository.insert(new Item(itemId, name, quantity, price));
         return item;
     }
-    public void modifyItem(String itemId, String name, String quantity, String price){
-        mongoTemplate.update(Item.class)
-                .matching(Criteria.where("itemId").is(itemId))
-                .apply(new Update().push("name").value(name))
-                .first();
-        mongoTemplate.update(Item.class)
-                .matching(Criteria.where("itemId").is(itemId))
-                .apply(new Update().push("quantity").value(quantity))
-                .first();
-        mongoTemplate.update(Item.class)
-                .matching(Criteria.where("itemId").is(itemId))
-                .apply(new Update().push("price").value(price))
-                .first();
+    public Item modifyItem(String itemId, String name, String quantity, String price){
+        Optional<Item> item = itemRepository.findItemByitemId(itemId);
+        if(item.isPresent()){
+            Item theItem = item.get();
+            theItem.setName(name);
+            theItem.setQuantity(quantity);
+            theItem.setPrice(price);
+            return itemRepository.save(theItem);
+        } else {
+            throw new RuntimeException("Item not found with id: " + itemId);
+        }
     }
 }

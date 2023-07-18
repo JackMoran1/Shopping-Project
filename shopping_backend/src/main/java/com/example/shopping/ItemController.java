@@ -32,4 +32,9 @@ public class ItemController {
         return new ResponseEntity<Item>(itemService.createItem(payload.get("itemId"), payload.get("name")
         , payload.get("quantity"), payload.get("price")), HttpStatus.CREATED);
     }
+    @PutMapping("/{itemId}")
+    public ResponseEntity<Item> modifyItem(@PathVariable String itemId, @RequestBody Map<String, String> payload){
+        return new ResponseEntity<Item>(itemService.modifyItem(itemId, payload.get("name"),
+                payload.get("quantity"), payload.get("price")), HttpStatus.OK);
+    }
 }
