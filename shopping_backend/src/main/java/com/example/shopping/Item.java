@@ -10,8 +10,6 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.List;
-
 @Document(collection = "ecommerce")
 @Data
 @AllArgsConstructor
@@ -21,11 +19,11 @@ public class Item {
     private ObjectId id;
     private String itemId;
     private String name;
-    private String quantity;
-    private String price;
+    private int quantity;
+    private float price;
     private String imageURL;
 
-    public Item(String itemId, String name, String quantity, String price, String imageURL) {
+    public Item(String itemId, String name, int quantity, float price, String imageURL) {
         this.itemId = itemId;
         this.name = name;
         this.quantity = quantity;
@@ -57,19 +55,19 @@ public class Item {
         this.name = name;
     }
 
-    public String getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
-    public String getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 }

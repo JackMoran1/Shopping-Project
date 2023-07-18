@@ -25,13 +25,13 @@ public class ItemService {
         return itemRepository.findItemByitemId(itemId);
     }
 
-    public Item createItem(String itemId, String name, String quantity, String price, String imageURL) {
+    public Item createItem(String itemId, String name, int quantity, float price, String imageURL) {
 //        Item item = new Item(itemId, name, quantity, price);
 //        itemRepository.insert(item);
         Item item = itemRepository.insert(new Item(itemId, name, quantity, price, imageURL));
         return item;
     }
-    public Item modifyItem(String itemId, String name, String quantity, String price, String imageURL){
+    public Item modifyItem(String itemId, String name, Integer quantity, Float price, String imageURL){
         Optional<Item> item = itemRepository.findItemByitemId(itemId);
         if(item.isPresent()){
             Item theItem = item.get();
