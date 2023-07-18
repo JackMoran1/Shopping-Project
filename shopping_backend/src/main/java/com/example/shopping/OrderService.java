@@ -9,20 +9,28 @@ import java.util.List;
 import java.util.Optional;
 
 /*This is where business logic goes
- * it uses the repository class to talk to the database, get the users*/
+ * it uses the repository class to talk to the database, get the orders*/
 
 @Service
-public class UserService {
+public class OrderService {
+    @Autowired
+    private OrderRepository orderRepository;
     @Autowired
     private UserRepository userRepository;
-    public User modifyUser(String userId, String name, String email){
+    public List<Order> getUserOrders(String userId){
         User user = userRepository.findUserByUserId(userId);
         if(user != null){
-            user.setName(name);
-            user.setEmail(email);
+            return orderRepository.findByUser(user);
         } else {
             throw new RuntimeException("User not found with userID: " + userId);
         }
-        return user;
+    }
+    public List<Order> getUserOrdersByDate(String userId){
+        User user = userRepository.findUserByUserId(userId);
+        if(user != null){
+            return orderRepository.findByUserOrderByOrderDate(user);
+        } else {
+            throw new RuntimeException("User not found with userID: " + userId);
+        }
     }
 }
