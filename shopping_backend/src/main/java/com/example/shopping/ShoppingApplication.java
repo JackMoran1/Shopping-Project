@@ -16,7 +16,7 @@ public class ShoppingApplication {
 
 	@GetMapping("/")
 	public String apiRoot() {
-		return "Hello world";
+		return "Landing Page";
 	}
 
 }
