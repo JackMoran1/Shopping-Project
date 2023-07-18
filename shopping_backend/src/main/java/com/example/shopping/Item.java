@@ -23,16 +23,26 @@ public class Item {
     private String name;
     private String quantity;
     private String price;
+    private String imageURL;
 
-    public Item(String itemId, String name, String quantity, String price) {
+    public Item(String itemId, String name, String quantity, String price, String imageURL) {
         this.itemId = itemId;
         this.name = name;
         this.quantity = quantity;
         this.price = price;
+        this.imageURL = imageURL;
     }
 
     public String getItemId() {
         return itemId;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 
     public void setItemId(String itemId) {

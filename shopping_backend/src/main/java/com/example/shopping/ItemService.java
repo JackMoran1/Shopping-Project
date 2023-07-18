@@ -25,19 +25,20 @@ public class ItemService {
         return itemRepository.findItemByitemId(itemId);
     }
 
-    public Item createItem(String itemId, String name, String quantity, String price) {
+    public Item createItem(String itemId, String name, String quantity, String price, String imageURL) {
 //        Item item = new Item(itemId, name, quantity, price);
 //        itemRepository.insert(item);
-        Item item = itemRepository.insert(new Item(itemId, name, quantity, price));
+        Item item = itemRepository.insert(new Item(itemId, name, quantity, price, imageURL));
         return item;
     }
-    public Item modifyItem(String itemId, String name, String quantity, String price){
+    public Item modifyItem(String itemId, String name, String quantity, String price, String imageURL){
         Optional<Item> item = itemRepository.findItemByitemId(itemId);
         if(item.isPresent()){
             Item theItem = item.get();
             theItem.setName(name);
             theItem.setQuantity(quantity);
             theItem.setPrice(price);
+            theItem.setImageURL(imageURL);
             return itemRepository.save(theItem);
         } else {
             throw new RuntimeException("Item not found with id: " + itemId);

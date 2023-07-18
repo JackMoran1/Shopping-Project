@@ -30,12 +30,12 @@ public class ItemController {
     @PostMapping
     public ResponseEntity<Item> createItem(@RequestBody Map<String, String> payload){
         return new ResponseEntity<Item>(itemService.createItem(payload.get("itemId"), payload.get("name")
-        , payload.get("quantity"), payload.get("price")), HttpStatus.CREATED);
+        , payload.get("quantity"), payload.get("price"), payload.get("imageURL")), HttpStatus.CREATED);
     }
     @PutMapping("/{itemId}")
     public ResponseEntity<Item> modifyItem(@PathVariable String itemId, @RequestBody Map<String, String> payload){
         return new ResponseEntity<Item>(itemService.modifyItem(itemId, payload.get("name"),
-                payload.get("quantity"), payload.get("price")), HttpStatus.OK);
+                payload.get("quantity"), payload.get("price"), payload.get("imageURL")), HttpStatus.OK);
     }
     @DeleteMapping("/{itemId}")
     public ResponseEntity<Void> deleteItem(@PathVariable String itemId){
