@@ -23,7 +23,7 @@ public class DiscountCodeController {
 
     @GetMapping("/{discountId}")
     public ResponseEntity<Optional<DiscountCode>> getSingleDiscountCode(@PathVariable String discountId) {
-        return new ResponseEntity<Optional<DiscountCode>>(DiscountCodeService.singleDiscountCode(discountId),
+        return new ResponseEntity<Optional<DiscountCode>>(discountService.singleDiscountCode(discountId),
                 HttpStatus.OK);
     }
 
