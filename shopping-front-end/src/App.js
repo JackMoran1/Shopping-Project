@@ -1,11 +1,45 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import api from './api/axiosConfig'
 import {useState, useEffect} from 'react';
+import SplitPane, {
+  Divider,
+  SplitPaneLeft,
+  SplitPaneRight,
+} from "./SplitPane";
+// import SplitPane from "react-split-pane"
+import TabContext from "./TabContext";
+
+const itemss = [
+  {
+    id: 1,
+    author: "Items",
+    description:
+    "There should be some things about items here but I haven't gotten it to work yet",
+  },
+  {
+    id: 2,
+    author: "Users",
+    description:
+    "There should be some things about users here but I haven't gotten it to work yet",
+  },
+  {
+    id: 3,
+    author: "Discount codes",
+    description:
+    "There should be some things about discount codes here but I haven't gotten it to work yet",
+  },
+  {
+    id: 4,
+    author: "Orders",
+    description:
+    "There should be some things about orders here but I haven't gotten it to work yet",
+  }
+]
 
 function App() {
 
-  const [item, setItems] = useState();
+  /*const [item, setItems] = useState();
 
   const getItems = async() =>{
     try{
@@ -20,25 +54,21 @@ function App() {
 
   useEffect(() => {
     getItems();
-  },[])
+  },[])*/
+
+  const [currItemss, setCurrItemss] = useState(1);
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-          This is Whalien's edit.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TabContext.Provider value={{ itemss, currItemss, setCurrItemss }}>
+        <SplitPane className="split-pane-row">
+          <SplitPaneLeft >
+          </SplitPaneLeft>
+          <Divider className="separator-col" />
+
+          <SplitPaneRight />
+        </SplitPane>
+      </TabContext.Provider>
     </div>
   );
 }
