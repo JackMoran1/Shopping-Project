@@ -17,7 +17,7 @@ public class OrdersService {
     }
 
     public Optional<Orders> singleOrders(String OrdersId) {
-        return ordersRepository.findOrdersByOrdersId(OrdersId);
+        return ordersRepository.findOrdersByOrderId(OrdersId);
     }
 
     public Orders createOrders(String orderId, int quantity, float price) {

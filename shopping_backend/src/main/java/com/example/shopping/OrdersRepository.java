@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface OrdersRepository extends MongoRepository<Orders, ObjectId> {
-    Optional<Orders> findOrdersByOrdersId(String itemId);
+    Optional<Orders> findOrdersByOrderId(String orderId);
 }
