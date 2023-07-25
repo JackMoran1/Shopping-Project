@@ -20,8 +20,8 @@ public class OrdersService {
         return ordersRepository.findOrdersByOrderId(OrdersId);
     }
 
-    public Orders createOrders(String orderId, int quantity, float price) {
-        Orders orders = new Orders(orderId, quantity, price);
+    public Orders createOrders(String orderId, int quantity, float price, String date) {
+        Orders orders = new Orders(orderId, quantity, price, date);
         return ordersRepository.save(orders);
     }
 }
