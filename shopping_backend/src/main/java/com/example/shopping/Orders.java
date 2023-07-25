@@ -15,12 +15,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Orders {
     @Id
     private ObjectId id;
-    private String orderId, date;
-    private int quantity;
+    private String orderId, userId, date;
     private float price;
-    public Orders(String orderId, int quantity, float price, String date) {
+    public Orders(String orderId, String userId, float price, String date) {
         this.orderId = orderId;
-        this.quantity = quantity;
+        this.userId = userId;
         this.price = price;
         this.date = date;
     }
@@ -31,14 +30,6 @@ public class Orders {
 
     public void setOrderId(String orderId) {
         this.orderId = orderId;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 
     public float getPrice() {
