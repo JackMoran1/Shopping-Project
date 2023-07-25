@@ -26,8 +26,6 @@ public class ItemService {
     }
 
     public Item createItem(String itemId, String name, int quantity, float price, String imageURL) {
-//        Item item = new Item(itemId, name, quantity, price);
-//        itemRepository.insert(item);
         Item item = itemRepository.insert(new Item(itemId, name, quantity, price, imageURL));
         return item;
     }

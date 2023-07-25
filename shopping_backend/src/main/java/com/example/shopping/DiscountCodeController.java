@@ -27,6 +27,11 @@ public class DiscountCodeController {
                 HttpStatus.OK);
     }
 
+    @PostMapping
+    public ResponseEntity<DiscountCode> createDiscount(@RequestBody Map<String, String> payload){
+        return new ResponseEntity<DiscountCode>(discountService.createDiscountCode(payload.get("discountId"), payload.get("discountName")
+                , Double.parseDouble(payload.get("discountAmount"))), HttpStatus.CREATED);
+    }
 
 /*
     @PutMapping("/{discountId}")

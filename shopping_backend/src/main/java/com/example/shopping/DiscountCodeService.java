@@ -19,6 +19,10 @@ public class DiscountCodeService {
 
     public Optional<DiscountCode> singleDiscountCode(String discountId) { return discountCodeRepository.findDiscountCodeBydiscountId(discountId); }
 
+    public DiscountCode createDiscountCode(String discountId, String discountName, double discountAmount) {
+        DiscountCode discount = discountCodeRepository.insert(new DiscountCode(discountId, discountName, discountAmount));
+        return discount;
+    }
 
     public void deleteDiscountCode(String discountId) {
         Optional<DiscountCode> discount = discountCodeRepository.findDiscountCodeBydiscountId(discountId);

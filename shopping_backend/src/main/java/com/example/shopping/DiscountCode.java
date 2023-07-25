@@ -16,14 +16,15 @@ public class DiscountCode {
 
     @Id
     private ObjectId id;
-    private String discountId;
+    private String discountId, discountName;
     private double discountAmount;
     //private String email;
 
 
 
-    public DiscountCode(String discountId, double discountAmount) {
+    public DiscountCode(String discountId, String discountName, double discountAmount) {
         this.discountId = discountId;
+        this.discountName = discountName;
         this.discountAmount = discountAmount;
         //this.name = name;
     }
