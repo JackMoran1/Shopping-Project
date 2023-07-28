@@ -1,5 +1,6 @@
 import React, {
     createRef, 
+    useCallback, 
     useContext, 
     useEffect, 
     useRef, 
@@ -7,8 +8,8 @@ import React, {
 } from "react";
 import SplitPaneContext from "./SplitPaneContext";
 import TabContext from "./TabContext";
-import api from './api/axiosConfig'
-import ItemsPage, {UsersPage} from './PageFetch.js';
+import api from './api/axiosConfig';
+import PageContext from './PageContext';
 
 const SplitPane = ({ children, ...props }) => {
     const [clientHeight, setClientHeight] = useState(null);
@@ -76,9 +77,56 @@ export const SplitPaneRight = (props) => {
     const { tabs, currTab } = useContext(TabContext);
     const tab = tabs.find((el) => el.id === currTab);
 
+    const [items, setItems] = useState(null);
+    const [users, setUsers] = useState(null);
+    const [codes, setCodes] = useState(null);
+    const [orders, setOrders] = useState(null);
+
+    const urls = ["/items", "/users", "/discount-code", "/orders"];
+
+    const fetchData = useCallback(async (url, setData) => {
+        try {
+            console.log('Fetching data from:', url);
+            const response = await api.get(url);
+            console.log("Data response:", response.data);
+            setData(response.data);
+        }
+        catch (error) {
+            console.error("Error fetching data:", error);
+        }
+    }, []);
+
+    useEffect(() => {
+        console.log('Fetching data from API...');
+        fetchData(urls[0], setItems);
+        console.log('Items in SplitPaneRight:', items);
+        fetchData(urls[1], setUsers);
+        console.log('Users in SplitPaneRight:', users);
+        fetchData(urls[2], setCodes);
+        console.log('Codes in SplitPaneRight:', codes);
+        fetchData(urls[3], setOrders);
+        console.log('Orders in SplitPaneRight:', orders);
+    }, [fetchData]);
+
+    let dataToShow;
+    switch (currTab) {
+        case 1:
+            dataToShow = items;
+            break;
+        case 2:
+            dataToShow = users;
+            break;
+        case 3:
+            dataToShow = codes;
+            break;
+        case 4:
+            dataToShow = orders;
+            break;
+    }
+
     return (
         <div {...props} className="split-pane-right">
-            {tab.page()}
+                {tab.page(dataToShow)/*use currTab from context to find page to go to*/}
         </div>
     );
 };

@@ -1,15 +1,15 @@
-// import logo from './logo.svg';
 import './App.css';
-import api from './api/axiosConfig'
 import {useState, useEffect} from 'react';
 import SplitPane, {
   Divider,
   SplitPaneLeft,
   SplitPaneRight,
 } from "./SplitPane";
-// import SplitPane from "react-split-pane"
 import TabContext from "./TabContext";
-import ItemsPage, {CodesPage, OrdersPage, UsersPage} from './PageFetch.js';
+import ItemsPage from './pages/ItemsPage';
+import CodesPage from './pages/CodesPage';
+import OrdersPage from './pages/OrdersPage';
+import UsersPage from './pages/UsersPage';
 
 const tabs = [
   {
