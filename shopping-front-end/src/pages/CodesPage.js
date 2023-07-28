@@ -1,6 +1,6 @@
 const CodesPage = (props) => {
     const codes = props;
-    console.log("Codes in CodesPage:", codes);
+    //console.log("Codes in CodesPage:", codes);
   
     return (
         <div {...props}>
@@ -13,9 +13,9 @@ const CodesPage = (props) => {
               </tr>
             </thead>
             <tbody>
-              {codes != null && codes != undefined ? (
+              {codes !== null && codes !== undefined ? (
                 codes.map((code, idx) =>
-                  <tr>
+                  <tr key = {idx}>
                     <td>{code.discountId}</td>
                     <td>{code.discountName}</td>
                     <td>{code.discountAmount}</td>

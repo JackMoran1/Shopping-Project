@@ -9,7 +9,6 @@ import React, {
 import SplitPaneContext from "./SplitPaneContext";
 import TabContext from "./TabContext";
 import api from './api/axiosConfig';
-import PageContext from './PageContext';
 
 const SplitPane = ({ children, ...props }) => {
     const [clientHeight, setClientHeight] = useState(null);

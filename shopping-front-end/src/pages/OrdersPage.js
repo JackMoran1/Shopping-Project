@@ -13,9 +13,9 @@ const OrdersPage = (props) => {
               </tr>
             </thead>
             <tbody>
-              { orders != null && orders != undefined ? (
+              { orders !== null && orders !== undefined ? (
                 orders.map((order, idx) =>
-                  <tr>
+                  <tr key = {idx}>
                     <td>{order.orderId}</td>
                     <td>{order.userId}</td>
                     <td>{order.date}</td>

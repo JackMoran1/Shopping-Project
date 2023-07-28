@@ -12,9 +12,9 @@ const UsersPage = (props) => {
               </tr>
             </thead>
             <tbody>
-              { users != null && users != undefined ? (
+              { users !== null && users !== undefined ? (
                 users.map((user, idx) =>
-                  <tr>
+                  <tr key = {idx}>
                     <td>{user.userId}</td>
                     <td>{user.name}</td>
                     <td>{user.email}</td>
