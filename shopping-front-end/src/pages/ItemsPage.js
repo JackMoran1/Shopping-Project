@@ -4,13 +4,15 @@ const ItemsPage = (props) => {
 
       return (
         <div {...props}>
-          <table>
+          <table className="page-table">
             <thead>
               <tr>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Quantity</th>
                 <th>Price</th>
+                <th>Image</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -21,6 +23,12 @@ const ItemsPage = (props) => {
                     <td>{item.name}</td>
                     <td>{item.quantity}</td>
                     <td>{item.price}</td>
+                    <td>
+                      <img src={item.imageURL} alt={`Image of ${item.name}`} style={{ width: '100px' }} />
+                    </td>
+                    <td>
+                      <button onClick={() => handleEdit(item.itemId)}>Edit</button>
+                    </td>
                 </tr>
                 ))
               ) : (

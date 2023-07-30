@@ -4,7 +4,7 @@ const CodesPage = (props) => {
   
     return (
         <div {...props}>
-          <table>
+          <table className="page-table">
             <thead>
               <tr>
                 <th>ID</th>
