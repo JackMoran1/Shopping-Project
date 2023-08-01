@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
+import CodePopup from './CodePopup';
 
-const CodesPage = ({fetchData, codes, setCodes}) => {
+const CodesPage = ({fetchData, codes, setCodes, codePopupOpen, openCodePopup, closeCodePopup }) => {
   
   useEffect(() => {
     fetchData("/discount-code", setCodes);
@@ -9,6 +10,8 @@ const CodesPage = ({fetchData, codes, setCodes}) => {
   
     return (
         <div>
+          <button onClick={() => {openCodePopup()}}>Create New Item</button>
+          {codePopupOpen && <CodePopup onClose = {closeCodePopup} ></CodePopup>}
           <table className="page-table">
             <thead>
               <tr>

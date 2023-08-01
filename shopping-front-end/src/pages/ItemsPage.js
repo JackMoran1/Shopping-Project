@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
+import ItemPopup from './ItemPopup';
 
-const ItemsPage = ({fetchData, items, setItems}) => {
+const ItemsPage = ({fetchData, items, setItems, itemPopupOpen, openItemPopup, closeItemPopup, selectedItemId}) => {
   
   useEffect(() => {
     fetchData("/items", setItems);
@@ -8,6 +9,7 @@ const ItemsPage = ({fetchData, items, setItems}) => {
 
       return (
         <div>
+          {itemPopupOpen && <ItemPopup onClose = {closeItemPopup} selectedItemId = {selectedItemId} items = {items}/>}
           <table className="page-table">
             <thead>
               <tr>
@@ -31,7 +33,7 @@ const ItemsPage = ({fetchData, items, setItems}) => {
                       <img src={item.imageURL} alt={`Image of ${item.name}`} style={{ width: '100px' }} />
                     </td>
                     <td>
-                      <button>Edit</button>
+                      <button onClick={() => openItemPopup(item.itemId)}>Edit</button>
                     </td>
                 </tr>
                 ))

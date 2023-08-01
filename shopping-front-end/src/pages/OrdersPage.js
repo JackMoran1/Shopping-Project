@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
 
 const OrdersPage = ({fetchData, orders, setOrders, sortedOrders, sortOrders}) => {
-  let fetched = false;
     
   useEffect(() => {
     fetchData("/orders", setOrders);

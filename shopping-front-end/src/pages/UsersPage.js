@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
+import UsersPopup from './UsersPopup';
 
-const UsersPage = ({fetchData, users, setUsers}) => {
+const UsersPage = ({fetchData, users, setUsers, userPopupOpen, openUserPopup, closeUserPopup, selectedUserId}) => {
     
   
   useEffect(() => {
@@ -9,12 +10,14 @@ const UsersPage = ({fetchData, users, setUsers}) => {
   
       return (
         <div>
+          {userPopupOpen && <UsersPopup onClose = {closeUserPopup} selectedUserId = {selectedUserId} users = {users}/>}
           <table className="page-table">
             <thead>
               <tr>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -24,6 +27,9 @@ const UsersPage = ({fetchData, users, setUsers}) => {
                     <td>{user.userId}</td>
                     <td>{user.name}</td>
                     <td>{user.email}</td>
+                    <td>
+                      <button onClick = {() => openUserPopup(user.userId)}>Edit</button>
+                    </td>
                   </tr>
                 )
               ) : (
