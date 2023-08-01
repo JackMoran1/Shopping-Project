@@ -1,5 +1,5 @@
 import './App.css';
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import SplitPane, {
   Divider,
   SplitPaneLeft,
@@ -15,29 +15,21 @@ const tabs = [
   {
     id: 1,
     category: "Items",
-    description:
-    "There should be some things about items here but I haven't gotten it to work yet",
     page: ItemsPage
   },
   {
     id: 2,
     category: "Users",
-    description:
-    "There should be some things about users here but I haven't gotten it to work yet",
     page: UsersPage
   },
   {
     id: 3,
     category: "Discount codes",
-    description:
-    "There should be some things about discount codes here but I haven't gotten it to work yet",
     page: CodesPage
   },
   {
     id: 4,
     category: "Orders",
-    description:
-    "There should be some things about orders here but I haven't gotten it to work yet",
     page: OrdersPage
   }
 ]
