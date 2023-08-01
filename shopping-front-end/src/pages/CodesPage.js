@@ -1,9 +1,14 @@
-const CodesPage = (props) => {
-    const codes = props;
-    //console.log("Codes in CodesPage:", codes);
+import React, { useEffect } from 'react';
+
+const CodesPage = ({fetchData, codes, setCodes}) => {
+  
+  useEffect(() => {
+    fetchData("/discount-code", setCodes);
+  }, [])
+    
   
     return (
-        <div {...props}>
+        <div>
           <table className="page-table">
             <thead>
               <tr>

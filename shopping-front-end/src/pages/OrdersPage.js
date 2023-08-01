@@ -1,8 +1,20 @@
-const OrdersPage = (props) => {
-    const orders = props;
+import React, {useEffect} from 'react';
+
+const OrdersPage = ({fetchData, orders, setOrders, sortedOrders, sortOrders}) => {
+  let fetched = false;
+    
+  useEffect(() => {
+    fetchData("/orders", setOrders);
+  }, [sortedOrders]);
   
       return (
-        <div {...props}>
+        <div>
+          <>
+          Sort By:
+          <button onClick={() => sortOrders("date")}>Date</button>
+          <button onClick={() => sortOrders("user")}>Customer</button>
+          <button onClick={() => sortOrders("price")}>Price</button>
+          </>
           <table className="page-table">
             <thead>
               <tr>
@@ -13,8 +25,8 @@ const OrdersPage = (props) => {
               </tr>
             </thead>
             <tbody>
-              { orders !== null && orders !== undefined ? (
-                orders.map((order, idx) =>
+              { sortedOrders !== null && sortedOrders !== undefined ? (
+                sortedOrders.map((order, idx) =>
                   <tr key = {idx}  style={{height: '100px'}}>
                     <td>{order.orderId}</td>
                     <td>{order.userId}</td>

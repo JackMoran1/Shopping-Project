@@ -1,9 +1,13 @@
-const ItemsPage = (props) => {
-    const items = props;
-    //console.log("Items in ItemsPage:", items);
+import React, { useEffect } from 'react';
+
+const ItemsPage = ({fetchData, items, setItems}) => {
+  
+  useEffect(() => {
+    fetchData("/items", setItems);
+  }, [])
 
       return (
-        <div {...props}>
+        <div>
           <table className="page-table">
             <thead>
               <tr>

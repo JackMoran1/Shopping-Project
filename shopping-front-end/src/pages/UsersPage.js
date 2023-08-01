@@ -1,8 +1,14 @@
-const UsersPage = (props) => {
-    const users = props;
+import React, {useEffect} from 'react';
+
+const UsersPage = ({fetchData, users, setUsers}) => {
+    
+  
+  useEffect(() => {
+    fetchData("users", setUsers)
+  }, [])
   
       return (
-        <div {...props}>
+        <div>
           <table className="page-table">
             <thead>
               <tr>

@@ -125,7 +125,7 @@ export const SplitPaneRight = (props) => {
 
     return (
         <div {...props} className="split-pane-right">
-                {tab.page(dataToShow)/*use currTab from context to find page to go to*/}
+          {tab.page(dataToShow)/*use currTab from context to find page to go to*/}
         </div>
     );
 };
