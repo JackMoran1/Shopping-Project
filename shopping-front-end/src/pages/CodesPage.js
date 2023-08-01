@@ -15,7 +15,7 @@ const CodesPage = (props) => {
             <tbody>
               {codes !== null && codes !== undefined ? (
                 codes.map((code, idx) =>
-                  <tr key = {idx}>
+                  <tr key = {idx}  style={{height: '100px'}}>
                     <td>{code.discountId}</td>
                     <td>{code.discountName}</td>
                     <td>{code.discountAmount}</td>

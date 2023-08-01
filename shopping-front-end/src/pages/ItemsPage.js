@@ -18,7 +18,7 @@ const ItemsPage = (props) => {
             <tbody>
               {items !== null && items !== undefined ? (
                 items.map((item, idx) => (
-                  <tr key={idx}>
+                  <tr key={idx} style={{height: '100px'}}>
                     <td>{item.itemId}</td>
                     <td>{item.name}</td>
                     <td>{item.quantity}</td>

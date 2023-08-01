@@ -15,7 +15,7 @@ const OrdersPage = (props) => {
             <tbody>
               { orders !== null && orders !== undefined ? (
                 orders.map((order, idx) =>
-                  <tr key = {idx}>
+                  <tr key = {idx}  style={{height: '100px'}}>
                     <td>{order.orderId}</td>
                     <td>{order.userId}</td>
                     <td>{order.date}</td>
