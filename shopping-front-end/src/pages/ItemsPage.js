@@ -27,7 +27,7 @@ const ItemsPage = (props) => {
                       <img src={item.imageURL} alt={`Image of ${item.name}`} style={{ width: '100px' }} />
                     </td>
                     <td>
-                      <button onClick={() => handleEdit(item.itemId)}>Edit</button>
+                      <button>Edit</button>
                     </td>
                 </tr>
                 ))
