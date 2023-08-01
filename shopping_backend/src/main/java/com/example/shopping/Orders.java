@@ -16,12 +16,14 @@ public class Orders {
     @Id
     private ObjectId id;
     private String orderId, userId, date;
+    private boolean completed;
     private float price;
-    public Orders(String orderId, String userId, float price, String date) {
+    public Orders(String orderId, String userId, float price, String date, boolean completed) {
         this.orderId = orderId;
         this.userId = userId;
         this.price = price;
         this.date = date;
+        this.completed = completed;
     }
 
     public String getOrderId() {

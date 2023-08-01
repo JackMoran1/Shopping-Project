@@ -29,7 +29,7 @@ public class OrdersController {
 
     @PostMapping
     public ResponseEntity<Orders> createOrder(@RequestBody Map<String, String> payload) {
-        return new ResponseEntity<Orders>(ordersService.createOrders(payload.get("orderId"), payload.get("userId"), Float.parseFloat(payload.get("price")), payload.get("date")), HttpStatus.CREATED);
+        return new ResponseEntity<Orders>(ordersService.createOrders(payload.get("orderId"), payload.get("userId"), Float.parseFloat(payload.get("price")), payload.get("date"), Boolean.parseBoolean(payload.get("completed"))), HttpStatus.CREATED);
 
     }
 }
