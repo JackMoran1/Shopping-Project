@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.bson.types.ObjectId;
 
-@Document(collection = "discount-code")
+@Document(collection = "discounts")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
