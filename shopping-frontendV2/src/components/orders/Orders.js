@@ -58,11 +58,15 @@ const Orders = ({ orders }) => {
   return (
     <div className="orders">
       <h1>Orders</h1>
+      <div>
       <button onClick={sortByPrice}>{sortState === 'price' ? "Unsort" : "Sort by Price"}</button>
       <button onClick={sortByDate}>{sortState === 'date' ? "Unsort" : "Sort by Date"}</button>
       <button onClick={sortByUserId}>{sortState === 'userId' ? "Unsort" : "Sort by User ID"}</button>
       <button onClick={toggleCompleted}>{showCompleted ? "Hide Completed" : "Show Completed"}</button>
+      </div>
+      <div>
       {displayedOrders.map(order => <Order key={order.orderId} order={order} />)}
+      </div>
     </div>
   );
 }

@@ -18,11 +18,15 @@ function Items({ items, setItems }) {
     return (
         <div className="items">
             <h1>Items</h1>
-            <button onClick={() => setShowNewItemForm(!showNewItemForm)}>
+            <div style={{display: 'inline-block'}}>
+            <button onClick={() => setShowNewItemForm(!showNewItemForm)} className="itemsButton">
                 {showNewItemForm ? 'Cancel' : 'New Item'}
             </button>
+            </div>
             {showNewItemForm && <NewItem onNewItem={handleNewItem} />}
+            <div>
             {items && items.map(item => <Item key={item.itemId} item={item} onEditItem={handleEditItem} />)}
+            </div>
         </div>
     );
 }
