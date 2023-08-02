@@ -3,6 +3,7 @@ Google docs link containing diagrams and workload report: https://docs.google.co
 
 Welcome to your store's backend! Our application provides an easy way for you to access and edit information about your store, including products, user information, current and past orders, and discout codes.
 
+# User's Guide 
 BEFORE SETTING UP
 You will need:
 -your own MongoDB database
