@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/discount-code")
+@RequestMapping("/discounts")
 @CrossOrigin
 public class DiscountCodeController {
 
