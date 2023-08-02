@@ -34,8 +34,6 @@ public class ItemController {
     }
     @PutMapping("/{itemId}")
     public ResponseEntity<Item> modifyItem(@PathVariable String itemId, @RequestBody Map<String, String> payload){
-//        Integer quantity = payload.containsKey("quantity") ? Integer.parseInt(payload.get("quantity")) : null;
-//        Float price = payload.containsKey("price") ? Float.parseFloat(payload.get("float")) : null;
         return new ResponseEntity<Item>(itemService.modifyItem(itemId, payload.get("name"),
                 Integer.parseInt(payload.get("quantity")), Float.parseFloat(payload.get("price")), payload.get("imageURL")), HttpStatus.OK);
     }
