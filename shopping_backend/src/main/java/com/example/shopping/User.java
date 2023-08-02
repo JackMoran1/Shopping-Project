@@ -27,9 +27,6 @@ public class User {
         this.email = email;
         this.name = name;
     }
-    public String getUserId() {
-        return userId;
-    }
 
     public void setUserId(String userId) {
         this.userId = userId;
@@ -41,17 +38,6 @@ public class User {
         this.name = name;
     }
 
-
-
-    public String getName() {
-        return name;
-    }
-
-
-
-    public String getEmail() {
-        return email;
-    }
 
 
     public void setEmail(String email) {
