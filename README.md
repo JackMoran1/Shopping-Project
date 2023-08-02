@@ -13,6 +13,9 @@ You will need:
 SETUP
 -Obtain the source code, either by forking the repository, or downloading it as a ZIP file and then unzipping.
 -Go to shopping_backend/src/main/resources/envInstructions.txt, and fill out the fields as they are named. You will need your own MongoDB database. Save the file and exit.
--start your backend
--Using your command prompt, go into the directory shopping-frontendV2 and install all frontend dependencies using "npm i".
--Start your frontend by typing "npm start".
+  
+  -start your backend
+  
+  -Using your command prompt, go into the directory shopping-frontendV2 and install all frontend dependencies using "npm i".
+  
+  -Start your frontend by typing "npm start".
