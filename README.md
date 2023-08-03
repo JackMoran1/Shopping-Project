@@ -2,10 +2,15 @@
 Google docs link containing diagrams and workload report: https://docs.google.com/document/d/1hgoE2s7M6qP1OseLAaO_syXdDVMFAmmQUUqgIVAEB8I/edit?usp=sharing
 
 march19th - Muhammad Sharif
+
 ZohirAL - Zohir Alliche
+
 JackmonCode - John Moran
+
 Whalien3520 - Markus Bao
+
 jonlee3221 - Jonathan Lee
+
 
 Welcome to your store's backend! Our application provides an easy way for you to access and edit information about your store, including products, user information, current and past orders, and discout codes.
 
