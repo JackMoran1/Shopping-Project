@@ -24,9 +24,10 @@ You will need:
 
   -the latest version of node.js
 
-SETUP
--Obtain the source code, either by forking the repository, or downloading it as a ZIP file and then unzipping.
--Go to shopping_backend/src/main/resources/envInstructions.txt, and fill out the fields as they are named. You will need your own MongoDB database. Save the file and exit.
+# SETUP
+ -Obtain the source code, either by forking the repository, or downloading it as a ZIP file and then unzipping.
+ 
+ -Go to shopping_backend/src/main/resources/envInstructions.txt, and fill out the fields as they are named. You will need your own MongoDB database. Save the file and exit.
   
   -start your backend
   
