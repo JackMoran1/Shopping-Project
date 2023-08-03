@@ -17,9 +17,12 @@ Welcome to your store's backend! Our application provides an easy way for you to
 # User's Guide 
 BEFORE SETTING UP
 You will need:
--your own MongoDB database
--the latest version of java
--the latest version of node.js
+
+  -your own MongoDB database
+
+  -the latest version of java
+
+  -the latest version of node.js
 
 SETUP
 -Obtain the source code, either by forking the repository, or downloading it as a ZIP file and then unzipping.
