@@ -1,5 +1,5 @@
 ## Shopping project
-Google docs link containing diagrams and workload report: https://docs.google.com/document/d/1hgoE2s7M6qP1OseLAaO_syXdDVMFAmmQUUqgIVAEB8I/edit
+Google docs link containing diagrams and workload report: https://docs.google.com/document/d/1hgoE2s7M6qP1OseLAaO_syXdDVMFAmmQUUqgIVAEB8I/edit?usp=sharing
 
 Welcome to your store's backend! Our application provides an easy way for you to access and edit information about your store, including products, user information, current and past orders, and discout codes.
 
